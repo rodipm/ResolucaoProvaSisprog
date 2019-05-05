@@ -18,25 +18,25 @@ Existem diversas formas de se implementar um sistema de login, alem de poder se 
 
 ´´´cpp
 
-bool login () {
-	cout << "User: ";
-	string user;
-	cin >> user;
-	cout << "Senha: ";
-	string senha;
-	cin >> senha;
-	cin.ignore(256, '\n');
-	fstream file("users", ios_base::in);
-	
-	while (file) {
-		string u, p;
-		file >> u >> p;
-		if (user.compare(u) == 0 && senha.compare(p) == 0) {
-			return true;
+	bool login () {
+		cout << "User: ";
+		string user;
+		cin >> user;
+		cout << "Senha: ";
+		string senha;
+		cin >> senha;
+		cin.ignore(256, '\n');
+		fstream file("users", ios_base::in);
+		
+		while (file) {
+			string u, p;
+			file >> u >> p;
+			if (user.compare(u) == 0 && senha.compare(p) == 0) {
+				return true;
+			}
 		}
+		return false;
 	}
-	return false;
-}
 ´´´
 
 ## Questao 4:

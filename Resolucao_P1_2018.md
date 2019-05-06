@@ -41,4 +41,16 @@ Existem diversas formas de se implementar um sistema de login, alem de poder se 
 
 
 ## Questao 5:
-Trata-se de um conjunto de instrucoes bastante reduzido, sem suporte para diferentes tipos de enderecamento, contendo apenas enderecamentos absolutos com opcao de leitura de memoria em modo direto ou indireto. Nao implementa enderecamento relativo. 
+Trata-se de um conjunto de instrucoes (CI) bastante reduzido, sem suporte para diferentes tipos de enderecamento, contendo apenas enderecamentos absolutos com opcao de leitura de memoria em modo direto ou indireto. Nao implementa enderecamento relativo. 
+Ao se discutir um CI estamos tratando sobre a arquitetura do computador, que deve apresentar certos componentes para dar suporte as suas instrucoes. Poderiamos pensar aqui em mudancas de arquitetura utilizando-se nao apenas de um registrador acumulador, mas sim um conjunto de registradores de proposito geral, que abririam possibilidades de outros tipos de intrucoes de acesso aos registradores e memoria. Alem disso o CI atual nao apresenta suporte "nativo" a implementacao de pilhas (stacks) de memoria, muito uteis na comunicacao entre modulos ou funcoes do programa. Tal implementacao poderia ser feita integrando um registrador para a base da pilha, assim como instrucoes de manejo do stack, isto e: PUSH e POP.
+Uma outra observacao sobre esse CI e a falta de um conjunto de instrucoes voltadas a numeros fracionarios, sejam eles de ponto fixo ou flutuante. Um CI que contenha instrucoes de manejo de numeros fracionarios deve conter registradores e operacoes especiais para tratar esse tipo de dado.
+Por fim, nota-se a adocao de instrucoes especiais de manejo de IO. Uma outra possivel solucao para esse tipo de comunicacao é o chamado *Memory Mapped IO* que aloca espacos especificos de memoria para funcionarem como ponto de entrada e saida de dispositivos de comunicacao, nao sendo necessario implementar instrucoes exclusivamente para tratamento de IO, reaproveitando instrucoes de leitura e escrita em memoria.
+
+## Questao 6:
+O **Codigo Objeto Absoluto** deve apresentar um formato bem definido, uma vez que deve ser processado por diferentes componentes de um sistema de programacao. Dentre as possiveis informacoes contidas no codigo objeto, pode-se mostrar um esquema geral de um Codigo Objeto Absoluto generico:
+	1. Tamanho do arquivo: Mostra quantos bytes de instrucoes de maquina e dados estao contidos no arquivo
+	2. Endereco Inicial: Endereco de memoria no qual o segmento de codigo deve ser inserido
+	3. Instrucoes e dados: Conjunto de instrucoes de ja traduzidos em codigo de maquina, com todos os seus enderecos ja resolvidos (absolutos). Alem de possiveis dados guardados em memoria, uma vez que nao se tem distincao de dados e instrucoes quanto a estrutura dessas informacoes ou local onde devem ser armazenadas.
+	4. Check Sum: Byte (ou bytes) de verificacao, que tem como objetivo verificar a integridade dos dados carregados. Trata-se do valor negado da soma de todos os bytes de dados do programa. O loader, utiliza-se desse campo para fazer a verificacao de leitura correta dos dados.
+
+Nota-se que essa e uma implementacao bastante simples de um formato de Codigo Objeto, contendo apenas os dados essenciais para seu funcionamento, podendo haver outros tipos de dados e meta dados.

@@ -85,11 +85,13 @@ Portanto, ao observar o arquivo com o codigo objeto binario obteriamos *AB*
 Ja na representacao ASCII hexadecimal, nos gostariamos de transformar o valor hexadecimal 0x4142 em sua representacao ASCII correspondente os caracteres *4*, *1*, *4*, *2* em sequencia. Para isso, pode-se observar cada nibble (4 bits) dos bytes, e mapear o valor encontrado para seu respectibo valor ASCII somando-se o valor 48 (0x30) caso esteja entre 0 e 9 (inclusive), e 65 (0x41) - 10 = 55 (0x37) caso seja maior que 9 e menor que 15 (inclusive). No exemplo acima teriamos:
 
 > 0x4 ->  0x4 + 0x30 = 0x34 = Digito ASCII '4'
+
 > 0x1 ->  0x1 + 0x30 = 0x31 = Digito ASCII '1' e etc...
 
 Caso tivessemos um numero como por exemplo *0xEF* a seguinte transformacao seria efetuada:
 
 > 0xE -> 0xE + 0x37 = 0x45 = Digito ASCII 'E'
+
 > 0xF -> oxF + 0x37 = ox46 = Digito ASCII 'F'
 
 Nota-se portanto que cada 4 bits de dados deve ser representado por 8 bits, correspondente a seu caracter ASCII.

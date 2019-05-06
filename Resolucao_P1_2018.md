@@ -76,6 +76,7 @@ A unica diferenca entre o loader absoluto binario e o loader ASCII hexadecimal e
 
 > HEX: 0x4142 / BIN: 01000001 01000010 - Dois bytes de informacao
 
+
 Na representacao binaria poderiamos representa-lo nas formas acima, em seu valor hexadecimal ou binario. Mas note que nao teriamos os caracteres 4142 nesse arquivo, mas sim suas representacoes ASCII correspondentes, nesse caso
 
 > 0x41 = 65 = 'A' e 0x42 = 66 = 'B'

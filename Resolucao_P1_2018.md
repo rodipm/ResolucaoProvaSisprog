@@ -78,4 +78,5 @@ Ja na representacao ASCII hexadecimal, nos gostariamos de transformar o valor he
 Caso tivessemos um numero como por exemplo *0xEF* a seguinte transformacao seria efetuada:
 > 0xE -> 0xE + 0x37 = 0x45 = Digito ASCII 'E'
 > 0xF -> oxF + 0x37 = ox46 = Digito ASCII 'F'
-
+Nota-se portanto que cada 4 bits de dados deve ser representado por 8 bits, correspondente a seu caracter ASCII.
+O processo de leitura deve seguir o procedimento reverso, obtendo os valores hexadecimais correspondetes a cada representacao ASCII e concatenar os dois digitos referentes a um byte.

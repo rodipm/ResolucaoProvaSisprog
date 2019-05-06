@@ -41,4 +41,4 @@ Existem diversas formas de se implementar um sistema de login, alem de poder se 
 
 
 ## Questao 5:
-Trata-se de um conjunto de instrucoes bastante reduzido, sem suporte para endereçamentos relativos, por exemplo
+Trata-se de um conjunto de instrucoes bastante reduzido, sem suporte para diferentes tipos de enderecamento, contendo apenas 

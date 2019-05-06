@@ -73,8 +73,11 @@ Uma possivel alteracao na arquitetura e organizacao desse sistema e a adicao de 
 ## Questao 8:
 
 A unica diferenca entre o loader absoluto binario e o loader ASCII hexadecimal e a forma de representacao dos dados e, consequentemente, a forma de interpreta-los. A representacao binaria pode ser bastante interessante por nao exigir tratamento das informacoes contidas no arquivo a ser carregado, bastanto ao loader copiar as informacoes para a memoria. A grande desvantagem e a dificuldade de leitura de arquivos binarios por seres humanos, uma vez que a representacao dos caracteres reconheciveis utiliza-se da tabela ASCII, sendo que nem todos os possiveis valores tem representacoes graficas. O codigo objeto em formato ASCII hexadecimal, por sua vez, pode ser lido com maior facilidade, uma vez que os valores serao representados por seus caracteres ASCII. O problema aqui e que o loader deve tratar de mais uma camada de abstracao, para transformar os caracteres em seus respectivos valores binarios. Para ilustrar a diferenca entre eles, suponha que temos uma instrucao que se traduz para o codigo objeto a seguir
+
 > HEX: 0x4142 / BIN: 01000001 01000010 - Dois bytes de informacao
+
 Na representacao binaria poderiamos representa-lo nas formas acima, em seu valor hexadecimal ou binario. Mas note que nao teriamos os caracteres 4142 nesse arquivo, mas sim suas representacoes ASCII correspondentes, nesse caso
+
 > 0x41 = 65 = 'A' e 0x42 = 66 = 'B'
 
 Portanto, ao observar o arquivo com o codigo objeto binario obteriamos *AB* 

@@ -53,4 +53,11 @@ O **Codigo Objeto Absoluto** deve apresentar um formato bem definido, uma vez qu
 	3. Instrucoes e dados: Conjunto de instrucoes de ja traduzidos em codigo de maquina, com todos os seus enderecos ja resolvidos (absolutos). Alem de possiveis dados guardados em memoria, uma vez que nao se tem distincao de dados e instrucoes quanto a estrutura dessas informacoes ou local onde devem ser armazenadas.
 	4. Check Sum: Byte (ou bytes) de verificacao, que tem como objetivo verificar a integridade dos dados carregados. Trata-se do valor negado da soma de todos os bytes de dados do programa. O loader, utiliza-se desse campo para fazer a verificacao de leitura correta dos dados.
 
-Nota-se que essa e uma implementacao bastante simples de um formato de Codigo Objeto, contendo apenas os dados essenciais para seu funcionamento, podendo haver outros tipos de dados e meta dados.
+Nota-se que essa e uma implementacao bastante simples de um formato de Codigo Objeto, contendo apenas os dados essenciais para seu funcionamento, podendo haver outros tipos de dados e meta dados. O codigo objeto absoluto e utilizado tambem pelo **Alocador** na fase de alocacao de memoria para o programa, escolhendo uma base de relocacao conveniente e pelo loader no momento de carregar o programa objeto na memoria do computador. Alem disso, o codigo objeto em seu formato Relocavel tambem pode ser tratado pelos **Ligadores** e **Relocadores**.
+
+## Questao 7:
+
+O **Loader** tem como funcao principal transpor os bytes do codigo objeto absoluto de uma midia (Papel Perfurado, disco rigido, etc) para a memoria primaria do computador, para que possa ser executada pelo processador futuramente. Para isso as operacoes de leitura de IO e escrita em memoria sao utilizadas com grande intensidade.
+Uma possivel alteracao na arquitetura e organizacao desse sistema e a adicao de um modulo de Acesso Direto a Memoria (DMA), que possibilita a utilizacao da unidade central de processamento para execucao de outras instrucoes enquanto os dados sao transferidos das entradas para a memoria pelo modulo DMA. Um sistema de interrupcoes seria util para o controle e comunicacao entre a UCP e o DMA.
+
+## Questao 8:

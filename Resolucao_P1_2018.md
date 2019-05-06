@@ -80,3 +80,14 @@ Caso tivessemos um numero como por exemplo *0xEF* a seguinte transformacao seria
 > 0xF -> oxF + 0x37 = ox46 = Digito ASCII 'F'
 Nota-se portanto que cada 4 bits de dados deve ser representado por 8 bits, correspondente a seu caracter ASCII.
 O processo de leitura deve seguir o procedimento reverso, obtendo os valores hexadecimais correspondetes a cada representacao ASCII e concatenar os dois digitos referentes a um byte.
+
+## Questao 9:
+
+O objetivo principal de qualquer montador e traduzir um programa em linguagem simbolica para linguagem de maquina. Os dois tipos de montadores, seja ele absoluto ou relocavel, executam essa funcao interpretando cada instrucao contina em linguagem simbolica e, com auxilio de uma tabela de mnemonicos, gerar os respectivos codigos de operacao associados seguido de seus operandos (quando existem).
+Alem das instrucoes, os montadores sao responsaveis por interpretar e lidar com as pseudo-instrucoes, ou instrucoes de montador, que sao um conjunto de comandos que alteram o funcionamento e comando o processo de montagem. Sao exemplos de pseudo-instrucoes as declaracoes de constantes, definicao de inicio e fim de bloco de codigo entre outros.
+Uma outra responsabilidade dos montadores e a de resolver referencias simbolicas internas, ou seja, associar enderecos de memoria a rotulos encontrados internamente no programa.
+A diferenca entre os montadores absolutos e relocaveis e o tipo de *Codigo Objeto* gerado, sendo que o primeiro ja esta pronto para ser carregado para a memoria e executado, enquanto o segundo aprensenta enderecos ainda nao resolvidos, uma vez que pode-se tratar de enderecos relativos a modulos externos e/ou referencias a rotulos externos. Esse tipo de Codigo Objeto chama-se relocavel e deve ser tratado por outros componentes do sistema como o Linker e o Relocador, para que se obtenha um Codigo Absoluto.
+O Codigo Objeto Relocavel deve apresentar algumas outras informacoes (meta dados) para que os programas de sistema possam processa-lo corretamente, tendo uma lista de rotulos importados e exportados, por exemplo.
+Ha ainda uma outra classificacao quanto aos montadores, sendo eles:
+1. Montador de um passo: Efetua a montagem e resolucao de enderecos de rotulos simultaneamente. Quando se tem referencias a rotulos ainda nao definidos (definidos a frente) se faz necessaria a utilizacao de uma tabela de pendencias, de forma que o codigo objeto desses casos sejam gerados quando se definirem os rotulos necessarios. Efetua apenas uma leitura do programa fonte, mas necessita de mais memoria e apresenta funcionamento mais complexo que o segundo caso.
+2. Montador de Dois Passos: No primeiro passo apenas obtem-se todos os simbolos e seus enderecos associados, para que no segundo passo monte-se o codigo de maquina final ja com os rotulos substituidos pelos seus respectivos enderecos. Necessita de menos memoria para ser implementado, porem precisa ler o programa fonte duas vezes. 

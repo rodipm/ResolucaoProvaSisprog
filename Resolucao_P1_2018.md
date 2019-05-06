@@ -48,10 +48,10 @@ Por fim, nota-se a adocao de instrucoes especiais de manejo de IO. Uma outra pos
 
 ## Questao 6:
 O **Codigo Objeto Absoluto** deve apresentar um formato bem definido, uma vez que deve ser processado por diferentes componentes de um sistema de programacao. Dentre as possiveis informacoes contidas no codigo objeto, pode-se mostrar um esquema geral de um Codigo Objeto Absoluto generico:
-	1. Tamanho do arquivo: Mostra quantos bytes de instrucoes de maquina e dados estao contidos no arquivo
-	2. Endereco Inicial: Endereco de memoria no qual o segmento de codigo deve ser inserido
-	3. Instrucoes e dados: Conjunto de instrucoes de ja traduzidos em codigo de maquina, com todos os seus enderecos ja resolvidos (absolutos). Alem de possiveis dados guardados em memoria, uma vez que nao se tem distincao de dados e instrucoes quanto a estrutura dessas informacoes ou local onde devem ser armazenadas.
-	4. Check Sum: Byte (ou bytes) de verificacao, que tem como objetivo verificar a integridade dos dados carregados. Trata-se do valor negado da soma de todos os bytes de dados do programa. O loader, utiliza-se desse campo para fazer a verificacao de leitura correta dos dados.
+1. Tamanho do arquivo: Mostra quantos bytes de instrucoes de maquina e dados estao contidos no arquivo
+2. Endereco Inicial: Endereco de memoria no qual o segmento de codigo deve ser inserido
+3. Instrucoes e dados: Conjunto de instrucoes de ja traduzidos em codigo de maquina, com todos os seus enderecos ja resolvidos (absolutos). Alem de possiveis dados guardados em memoria, uma vez que nao se tem distincao de dados e instrucoes quanto a estrutura dessas informacoes ou local onde devem ser armazenadas.
+4. Check Sum: Byte (ou bytes) de verificacao, que tem como objetivo verificar a integridade dos dados carregados. Trata-se do valor negado da soma de todos os bytes de dados do programa. O loader, utiliza-se desse campo para fazer a verificacao de leitura correta dos dados.
 
 Nota-se que essa e uma implementacao bastante simples de um formato de Codigo Objeto, contendo apenas os dados essenciais para seu funcionamento, podendo haver outros tipos de dados e meta dados. O codigo objeto absoluto e utilizado tambem pelo **Alocador** na fase de alocacao de memoria para o programa, escolhendo uma base de relocacao conveniente e pelo loader no momento de carregar o programa objeto na memoria do computador. Alem disso, o codigo objeto em seu formato Relocavel tambem pode ser tratado pelos **Ligadores** e **Relocadores**.
 

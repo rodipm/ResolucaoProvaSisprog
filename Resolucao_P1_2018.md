@@ -38,6 +38,11 @@ Existem diversas formas de se implementar um sistema de login, alem de poder se 
 		return false;
 	}
 
+## Questao 3:
+
+Uma possivel forma alternativa de controlar o sistema de programacao e atraves de um sistema de interrupcoes, de forma que cada tipo de interrupcao utilizada ativa uma determinada rotina de tratamento. Ao receber um sinal de interrupcao o processador deve guardar na memoria os valores necessarios para se garantir o estado da maquina, assim como o endereco da instrucao sendo executada. Apos salvar esses dados, passa-se o controle para a rotina de tratamento da interrupcao, que deve realizar sua tarefa e, ao final, retornar a execucao do programa anterior, retornando os dados salsalvos e, portanto, o estado da maquina. 
+Pode-se adotar um sistema de prioridades de interrupcoes, para que se possa controlar quais interrupcoes devem ou nao ser tratadas a cada momento, e como isso deve ocorrer.
+
 ## Questao 4:
 
 ![Questao 4 - Solucao](./Questao4.png)
